@@ -1,0 +1,14 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    deploy:
+      replicas: 3
+      placement:
+        constraints: [node.role == worker]
+    networks:
+      - webnet
+
+networks:
+  webnet:
