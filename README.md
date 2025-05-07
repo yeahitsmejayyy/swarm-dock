@@ -99,7 +99,6 @@ Yup! No VMs, no cloud required. This whole thing runs Docker-in-Docker container
 If you want a quick demo, drop this in `compose/docker-compose.yml`:
 
 ```yaml
-version: "3.8"
 services:
   web:
     image: nginx:alpine
