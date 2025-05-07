@@ -19,9 +19,10 @@ docker network inspect $NETWORK_NAME >/dev/null 2>&1 || \
 # Start manager container
 echo "🧠 Starting manager node..."
 docker run -d --privileged --name manager --hostname manager \
+  -p 8080:8080 \
   --network $NETWORK_NAME \
-  --rm \
   swarm-manager
+
 
 # Wait for manager to be ready
 echo "⏳ Waiting for manager to initialize Docker daemon..."
